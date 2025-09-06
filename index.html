@@ -43,7 +43,7 @@
 <section id="chatbot">
 <h2>Ask me about Me❕💬</h2>
     <div id="chatbox" style="border:1px solid #ccc; padding:10px; width:400px; height:400px; overflow-y:scroll; background:black; color:white;">
-    <p><b>Bot:</b> Hi! I'm Marquis H Jones, a Security Specialist. Ask me about my skills, experience, education, certifications, projects, leadership, interview questions, or portfolio navigation.</p>
+    <p><b>Jones Secretary</b> Hi! I'm Marquis H Jones, a Security Specialist. Ask me about my skills, experience, education, certifications, projects, leadership, interview questions, or portfolio navigation.</p>
   </div>
   <input type="text" id="userInput" placeholder="Type your question here..." style="width:300px;">
   <button onclick="sendMessage()">Send</button>
@@ -56,7 +56,7 @@ function sendMessage() {
   let response = "";
 
   // Add user message
-  chatbox.innerHTML += "<p><b>You:</b> " + input + "</p>";
+  chatbox.innerHTML += "<p><b>Jones secretary</b> " + input + "</p>";
 
   // Chatbot logic
   // --- Skills & Experience ---
@@ -112,16 +112,16 @@ function sendMessage() {
     }
   } 
   // --- Greetings ---
-  else if (input.includes("hello") || input.includes("hi") || input.includes("hey")) {
+  else if (input.includes("hello") || input.includes("H!i") || input.includes("Hey!")  input.includes("Hello, how are you?")  input.includes("Beautiful day today!")  input.includes("Welcome!")) {
     response = "Hello! I'm glad you're exploring my portfolio. Ask me anything about skills, experience, projects, or professional questions.";
   } 
   // --- Fallback ---
   else {
-    response = "I'm not sure about that. Please contact me directly or set up a virtual chat to discuss in more detail.";
+    response = "I don't have that answer here, Please contact me directly or set up a virtual chat to discuss more.";
   }
 
-  // Add bot response
-  chatbox.innerHTML += "<p><b>Bot:</b> " + response + "</p>";
+  // Add Secretary response
+  chatbox.innerHTML += "<p><b>Jones Sceretary</b> " + response + "</p>";
 
   // Clear input
   document.getElementById("userInput").value = "";
