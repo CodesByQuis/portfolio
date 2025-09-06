@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Big Quis Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HERO / BANNER -->
+    <section id="home" class="banner">
+        <h1>🎤 Big Quis</h1>
+        <p>Security Expert | IT Specialist | Leader</p>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Me</button>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I have experience in protective security operations, emergency communications, law enforcement, IT support, and cybersecurity. I’ve led platoons and companies in training courses and developed skills in teamwork, incident response, and collaboration. 💪🔥</p>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <h3>Project 1 🔒</h3>
+                <p>Security analysis tool built with Python to identify vulnerabilities.</p>
+                <a href="https://github.com/yourusername/project1" target="_blank">View on GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>Project 2 💻</h3>
+                <p>Interactive web portfolio with chatbot and QR code integration.</p>
+                <a href="https://github.com/yourusername/project2" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESUME SECTION -->
+    <section id="resume">
+        <h2>Resume 📝</h2>
+        <p>Click below to download my updated resume:</p>
+        <a href="resume.pdf" download class="btn">Download Resume</a>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2>Contact Me 📬</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- CHATBOT SECTION -->
+    <section id="chatbot">
+        <h2>Chat with Me 🤖</h2>
+        <div id="chatBox"></div>
+        <input type="text" id="userInput" placeholder="Ask me something...">
+        <button onclick="sendMessage()">Send</button>
+    </section>
+
+    <!-- QR CODE SECTION -->
+    <section id="qrcode">
+        <h2>Scan to Visit My Portfolio 📱</h2>
+        <img src="qr.png" alt="QR Code">
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
