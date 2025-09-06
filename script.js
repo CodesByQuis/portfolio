@@ -12,11 +12,11 @@ function sendMessage() {
     } else if(input.includes('contact')) {
         response = 'Use the Contact form to send me a message. 📬';
     } else {
-        response = 'Sorry, I do not understand that yet! 🤔';
+        response = 'Sorry, I do not understand that yet, please contact me! 🤔';
     }
 
-    chatBox.innerHTML += `<p><strong>You:</strong> ${input}</p>`;
-    chatBox.innerHTML += `<p><strong>Bot:</strong> ${response}</p>`;
+    chatBox.innerHTML += `<p><strong>Marquis:</strong> ${input}</p>`;
+    chatBox.innerHTML += `<p><strong>Jones Secretary:</strong> ${response}</p>`;
     document.getElementById('userInput').value = '';
     chatBox.scrollTop = chatBox.scrollHeight; // auto scroll to latest message
 }
