@@ -70,7 +70,7 @@
         <h2>Ask me about Me❕💬</h2>
         <div class="chat-container">
             <div id="chatbox">
-                <p><b>Jones Secretary:</b> Hi! I'm Marquis H Jones, a Security Specialist. Ask me about my skills, experience, education, certifications, projects, leadership, interview questions, or portfolio navigation.</p>
+                <p><b>Chat:</b> Hi! I'm Marquis H Jones, a Security Specialist. Ask me about my skills, experience, education, certifications, projects, leadership, interview questions, or portfolio navigation.</p>
             </div>
             <input type="text" id="userInput" placeholder="Type your question here...">
             <button onclick="sendMessage()">Send</button>
@@ -143,7 +143,7 @@
             response = "I don't have that answer here. Please contact me directly or set up a virtual chat to discuss more.";
         }
 
-        chatbox.innerHTML += "<p><b>Jones Secretary:</b> " + response + "</p>";
+        chatbox.innerHTML += "<p><b>Chat:</b> " + response + "</p>";
         document.getElementById("userInput").value = "";
         chatbox.scrollTop = chatbox.scrollHeight;
     }
