@@ -57,12 +57,96 @@
     </section>
 
     <!-- CHATBOT SECTION -->
-    <section id="chatbot">
-        <h2>Chat with Me 🤖</h2>
-        <div id="chatBox"></div>
-        <input type="text" id="userInput" placeholder="Ask me something...">
-        <button onclick="sendMessage()">Send</button>
-    </section>
+<section id="chatbot">
+<h2>Im virtually here, Ask me Anything❕💬</h2>
+    <div id="chatbox" style="border:1px solid #ccc; padding:10px; width:400px; height:400px; overflow-y:scroll; background:black; color:white;">
+    <p><b>Bot:</b> Hi! I'm Marquis H Jones, a Security Specialist. Ask me about my skills, experience, education, certifications, projects, leadership, interview questions, or portfolio navigation.</p>
+  </div>
+  <input type="text" id="userInput" placeholder="Type your question here..." style="width:300px;">
+  <button onclick="sendMessage()">Send</button>
+</section>
+
+<script>
+function sendMessage() {
+  let input = document.getElementById("userInput").value.toLowerCase();
+  let chatbox = document.getElementById("chatbox");
+  let response = "";
+
+  // Add user message
+  chatbox.innerHTML += "<p><b>You:</b> " + input + "</p>";
+
+  // Chatbot logic
+  // --- Skills & Experience ---
+  if (input.includes("skills")) {
+    response = "I specialize in Protective Security Operations, IT Service Management, Cybersecurity & IT Support, Security Compliance, Visitor Management & Access Control, Firearm Proficiency, Collaboration & Team Coordination, and Incident Response.";
+  } else if (input.includes("projects")) {
+    response = "Check out my portfolio and GitHub Projects section. Example: this portfolio website (HTML/CSS/JS), security and IT projects. Links are in the Projects section.";
+  } else if (input.includes("experience") || input.includes("work")) {
+    response = "I served in the Army, gaining hands-on experience in security operations, IT support, and leadership. Career spans 2–5 years.";
+  } else if (input.includes("leadership")) {
+    response = "I have led squads ranging from 7 to 45 soldiers, focusing on discipline, coordination, and mission success.";
+  } else if (input.includes("achievements") || input.includes("recognition")) {
+    response = "Recognized for dedication, hard work, and high performance in military and professional settings.";
+  } else if (input.includes("security clearance")) {
+    response = "I currently hold a Secret clearance and am processing a Top Secret (TS) clearance.";
+  } else if (input.includes("certifications") || input.includes("certs") || input.includes("it certs")) {
+    response = "I hold IT certifications in Cybersecurity, IT Service Management, and Security Compliance.";
+  } else if (input.includes("education") || input.includes("college") || input.includes("university")) {
+    response = "I am pursuing a Bachelor of Science in Computer Technology at Bowie State University, expected graduation 2026.";
+  } else if (input.includes("degree") || input.includes("field of study")) {
+    response = "Yes, I am working towards a B.S. in Computer Technology.";
+  } else if (input.includes("age") || input.includes("old")) {
+    response = "I prefer to focus on experience and skills rather than my exact age.";
+  } else if (input.includes("name")) {
+    response = "My full name is Marquis H Jones.";
+  } 
+  // --- Interview Questions & Scenarios ---
+  else if (input.includes("interview")) {
+    response = "Common interview questions: 'Tell me about yourself', 'Describe a challenge you faced', 'What are your strengths?', 'What are your weaknesses?', 'Where do you see yourself in 5 years?', 'How do you handle pressure?'.";
+  } else if (input.includes("scenario") || input.includes("what would you do")) {
+    response = "In challenging scenarios, I rely on structured problem-solving, clear communication, and leadership skills to succeed.";
+  } 
+  // --- Fun / Personal Info ---
+  else if (input.includes("fun fact") || input.includes("interesting")) {
+    response = "Fun fact: I enjoy keeping things professional but also like to balance work with personal enjoyment.";
+  } else if (input.includes("career goals") || input.includes("future plans")) {
+    response = "My goal is to continue growing as a Security Specialist, expanding expertise in cybersecurity and IT support while maintaining leadership excellence.";
+  } else if (input.includes("soft skills") || input.includes("personality") || input.includes("strengths")) {
+    response = "I am disciplined, detail-oriented, collaborative, and excel under pressure, with strong leadership and communication skills.";
+  } 
+  // --- Portfolio Navigation ---
+  else if (input.includes("portfolio section") || input.includes("navigate")) {
+    if (input.includes("projects")) {
+      response = "You can view all my projects in the Projects section of the portfolio.";
+    } else if (input.includes("resume")) {
+      response = "My resume is available in the Resume section for viewing or download.";
+    } else if (input.includes("contact")) {
+      response = "You can reach me via the Contact section of this portfolio.";
+    } else if (input.includes("qr")) {
+      response = "Scan the QR code section to quickly access my portfolio on any device.";
+    } else {
+      response = "You can explore sections like Home, About, Projects, Resume, Contact, and QR Code.";
+    }
+  } 
+  // --- Greetings ---
+  else if (input.includes("hello") || input.includes("hi") || input.includes("hey")) {
+    response = "Hello! I'm glad you're exploring my portfolio. Ask me anything about skills, experience, projects, or professional questions.";
+  } 
+  // --- Fallback ---
+  else {
+    response = "I'm not sure about that. Please contact me directly or set up a virtual chat to discuss in more detail.";
+  }
+
+  // Add bot response
+  chatbox.innerHTML += "<p><b>Bot:</b> " + response + "</p>";
+
+  // Clear input
+  document.getElementById("userInput").value = "";
+  chatbox.scrollTop = chatbox.scrollHeight;
+}
+</script>
+
+
 
     <!-- QR CODE SECTION -->
     <section id="qrcode">
