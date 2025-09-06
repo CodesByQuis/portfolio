@@ -149,18 +149,24 @@ input::placeholder, textarea::placeholder {
 }
 
 /* ==================== CHATBOX ==================== */
-#chatBox {
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers chatbox, input, and button */
+    margin: 0 auto;
+}
+#chatbox {
     background: #1a1a1a;
     border: 2px solid #ff3c00;
     padding: 20px;
-    width: 80%;
-    margin: 20px auto;
-    height: 200px;
+    width: 400px;
+    max-width: 90%; /* responsive */
+    height: 400px;
     overflow-y: scroll;
     border-radius: 10px;
     color: #ffd700;
+    margin-bottom: 15px; /* spacing between chatbox and input */
 }
-
 /* ==================== QR CODE ==================== */
 #qrcode img {
     border: 4px solid #ff3c00;
