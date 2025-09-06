@@ -5,12 +5,7 @@ body {
     padding: 0;
     background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     color: #ffffff;
-    text-align: center; /* centers text by default */
-}
-
-main, section {
-    max-width: 1000px; /* keeps content from stretching too wide */
-    margin: 0 auto; /* centers content horizontally */
+    text-align: center;
 }
 
 /* ==================== HEADINGS ==================== */
@@ -29,26 +24,7 @@ h2 {
     text-shadow: 2px 2px #000;
 }
 
-p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto 20px auto; /* centers paragraph text */
-}
-
-/* ==================== LINKS & BUTTONS ==================== */
-a {
-    color: #ff3c00;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-a:hover {
-    color: #00ffff;
-    text-shadow: 1px 1px #000;
-}
-
+/* ==================== BUTTONS ==================== */
 button, .btn {
     padding: 15px 30px;
     cursor: pointer;
@@ -58,9 +34,9 @@ button, .btn {
     font-size: 1em;
     font-weight: bold;
     text-transform: uppercase;
-    transition: 0.3s;
     border-radius: 8px;
     box-shadow: 0 0 10px #ff3c00;
+    transition: 0.3s;
 }
 
 button:hover, .btn:hover {
@@ -75,23 +51,50 @@ button:hover, .btn:hover {
     background: linear-gradient(to right, #ff3c00, #ff6600);
     color: #fff;
     padding: 150px 20px;
-    text-align: center;
     border-bottom: none;
 }
 
-.banner p {
-    font-size: 1.5em;
+/* ==================== BUBBLES ==================== */
+.bubble-container {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: visible;
     margin-bottom: 30px;
 }
 
-/* ==================== PROJECT CARDS ==================== */
+.bubble {
+    position: absolute;
+    background: #ff3c00;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1em;
+    opacity: 0.9;
+    animation: floatBubble 10s linear infinite;
+}
+
+.bubble:hover {
+    background: #ffd700;
+    color: #000;
+    transform: scale(1.2);
+    cursor: default;
+    box-shadow: 0 0 15px #00ffff;
+}
+
+@keyframes floatBubble {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ==================== PROJECTS ==================== */
 .projects-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start; /* ensures cards start at top */
     gap: 30px;
-    margin: 0 auto; /* centers the flex container */
 }
 
 .project-card {
@@ -102,7 +105,6 @@ button:hover, .btn:hover {
     padding: 20px;
     transition: 0.3s;
     box-shadow: 0 0 15px #ff3c00;
-    margin: 0 auto; /* centers individual cards if wrapping */
 }
 
 .project-card h3 {
@@ -132,7 +134,28 @@ button:hover, .btn:hover {
     transform: scale(1.05);
 }
 
-/* ==================== FORM & INPUTS ==================== */
+/* ==================== CHATBOX ==================== */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#chatbox {
+    width: 400px;
+    max-width: 90%;
+    height: 400px;
+    background: black;
+    color: white;
+    border: 2px solid #ff3c00;
+    border-radius: 10px;
+    padding: 10px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+/* ==================== FORM ==================== */
 input, textarea {
     padding: 12px;
     width: 80%;
@@ -148,25 +171,6 @@ input::placeholder, textarea::placeholder {
     color: #aaa;
 }
 
-/* ==================== CHATBOX ==================== */
-.chat-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* centers chatbox, input, and button */
-    margin: 0 auto;
-}
-#chatbox {
-    background: #1a1a1a;
-    border: 2px solid #ff3c00;
-    padding: 20px;
-    width: 400px;
-    max-width: 90%; /* responsive */
-    height: 400px;
-    overflow-y: scroll;
-    border-radius: 10px;
-    color: #ffd700;
-    margin-bottom: 15px; /* spacing between chatbox and input */
-}
 /* ==================== QR CODE ==================== */
 #qrcode img {
     border: 4px solid #ff3c00;
@@ -177,12 +181,6 @@ input::placeholder, textarea::placeholder {
 
 #qrcode img:hover {
     transform: scale(1.2);
-}
-
-/* ==================== ANIMATIONS ==================== */
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
 }
 
 /* ==================== RESPONSIVE ==================== */
