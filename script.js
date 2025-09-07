@@ -22,35 +22,24 @@ function sendMessage() {
 }
 
 // -------------------------
-// Guess the Word Game
+// Guess the Word - Final Version (Parts 1-4)
 // -------------------------
-
 const gameContainer = document.getElementById("guess-game");
 
 if (gameContainer) {
-    // Step 1: Pick a random word (like Part 4 in Python)
-    const words = ["apple", "banana", "orange", "grape", "cherry", "eggplant"];
+    // Part 4: Word list + random choice
+    const words = ["apple", "banana", "orange", "grape", "eggplant", "cherry"];
     let secretWord = words[Math.floor(Math.random() * words.length)];
 
-    // Step 2: Set up game state
-    let guessesLeft = 10; // like Part 3
+    // Part 2: Dashes to show hidden word
+    let dashes = "-".repeat(secretWord.length);
+
+    // Part 1 + 3: Track guesses
+    let guessesLeft = 10;
     let guessedLetters = [];
-    let displayWord = "-".repeat(secretWord.length);
 
-    // Step 3: Function to update display
-    function renderGame(message = "") {
-        gameContainer.innerHTML = `
-            <p>Word: ${displayWord}</p>
-            <p>Guessed letters: ${guessedLetters.join(", ") || "None"}</p>
-            <p>Guesses left: ${guessesLeft}</p>
-            <input type="text" id="letterInput" maxlength="1" placeholder="Enter a letter">
-            <button onclick="makeGuess()">Guess</button>
-            <p id="gameMessage">${message}</p>
-        `;
-    }
-
-    // Step 4: Update dashes (like update_dashes in Python Part 2)
-    function updateWord(secret, current, guess) {
+    // Part 2: Update dashes function
+    function updateDashes(secret, current, guess) {
         let result = "";
         for (let i = 0; i < secret.length; i++) {
             if (secret[i] === guess) {
@@ -62,41 +51,67 @@ if (gameContainer) {
         return result;
     }
 
-    // Step 5: Handle guesses
+    // Render the game UI
+    function renderGame(message = "") {
+        gameContainer.innerHTML = `
+            <p>Word: ${dashes}</p>
+            <p>Guessed letters: ${guessedLetters.join(", ") || "None"}</p>
+            <p>Guesses left: ${guessesLeft}</p>
+            <input type="text" id="letterInput" maxlength="1" placeholder="Enter a letter">
+            <button onclick="makeGuess()">Guess</button>
+            <p id="gameMessage">${message}</p>
+        `;
+    }
+
+    // Handle a guess
     window.makeGuess = function() {
         const input = document.getElementById("letterInput");
         const guess = input.value.toLowerCase();
         input.value = "";
 
-        if (!guess.match(/^[a-z]$/)) {
-            renderGame("⚠️ Please enter a single lowercase letter.");
+        // Part 1: Input validation
+        if (guess.length !== 1) {
+            renderGame("⚠️ Your guess must have exactly one character!");
             return;
         }
-
+        if (!/[a-z]/.test(guess)) {
+            renderGame("⚠️ Your guess must be a lowercase letter!");
+            return;
+        }
         if (guessedLetters.includes(guess)) {
             renderGame("⚠️ You already guessed that letter!");
             return;
         }
 
+        // Store guess
         guessedLetters.push(guess);
 
+        // Correct guess
         if (secretWord.includes(guess)) {
-            displayWord = updateWord(secretWord, displayWord, guess);
-            if (displayWord === secretWord) {
+            dashes = updateDashes(secretWord, dashes, guess);
+
+            // Part 3: Win condition
+            if (dashes === secretWord) {
                 renderGame(`🎉 Congrats! You win. The word was: ${secretWord}`);
                 return;
             }
-            renderGame(`✅ That letter is in the word!`);
-        } else {
+
+            renderGame("✅ That letter is in the word!");
+        } 
+        // Incorrect guess
+        else {
             guessesLeft--;
-            if (guessesLeft === 0) {
-                renderGame(`💀 You lose! The word was: ${secretWord}`);
+
+            // Part 3: Lose condition
+            if (guessesLeft <= 0) {
+                renderGame(`💀 You lose. The word was: ${secretWord}`);
                 return;
             }
-            renderGame(`❌ That letter is not in the word.`);
+
+            renderGame("❌ That letter is not in the word.");
         }
     };
 
-    // Initialize game
+    // Start game
     renderGame();
 }
