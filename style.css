@@ -218,3 +218,22 @@ input::placeholder, textarea::placeholder {
         width: 90%;
     }
 }
+
+/* Virtual Games */
+#guess-game {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-top: 10px;
+    background: #fff;
+    max-width: 400px;
+}
+
+#guess-game input {
+    width: 50px;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+#guess-game button {
+    padding: 5px 10px;
+}
