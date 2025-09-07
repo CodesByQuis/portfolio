@@ -16,7 +16,7 @@ function sendMessage() {
     }
 
     chatBox.innerHTML += `<p><strong>Marquis:</strong> ${input}</p>`;
-    chatBox.innerHTML += `<p><strong>Jones Secretary:</strong> ${response}</p>`;
+    chatBox.innerHTML += `<p><strong>Chat:</strong> ${response}</p>`;
     document.getElementById('userInput').value = '';
     chatBox.scrollTop = chatBox.scrollHeight; // auto scroll to latest message
 }
