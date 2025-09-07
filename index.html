@@ -44,7 +44,7 @@
 
     <!-- CHATBOT SECTION -->
     <section id="chatbot">
-        <h2>Ask me about Me❕💬</h2>
+        <h2>Ask about Me❕💬</h2>
         <div id="chatbox">
             <p><b>Jones Secretary</b> Hi! I'm Marquis H Jones, a Security Specialist. Ask me about my skills, experience, education, certifications, projects, leadership, interview questions, or portfolio navigation.</p>
         </div>
@@ -66,7 +66,7 @@
       let chatbox = document.getElementById("chatbox");
       let response = "";
 
-      chatbox.innerHTML += "<p><b>Jones Secretary</b> " + input + "</p>";
+      chatbox.innerHTML += "<p><b>Chat</b> " + input + "</p>";
 
       if (input.includes("skills")) {
         response = "I specialize in Protective Security Operations, IT Service Management, Cybersecurity & IT Support, Security Compliance, Visitor Management & Access Control, Firearm Proficiency, Collaboration & Team Coordination, and Incident Response.";
@@ -96,7 +96,7 @@
         response = "I don't have that answer here, Please contact me directly or set up a virtual chat to discuss more.";
       }
 
-      chatbox.innerHTML += "<p><b>Jones Secretary</b> " + response + "</p>";
+      chatbox.innerHTML += "<p><b>Chat</b> " + response + "</p>";
       document.getElementById("userInput").value = "";
       chatbox.scrollTop = chatbox.scrollHeight;
     }
@@ -126,7 +126,7 @@
     function moveBubble(bubble) {
       const newTop = Math.random() * window.innerHeight;
       const newLeft = Math.random() * window.innerWidth;
-      const duration = 4000 + Math.random() * 6000; // 4-10 seconds
+      const duration = 10000 + Math.random() * 6000; // 4-10 seconds
 
       bubble.animate([
         { top: bubble.style.top, left: bubble.style.left },
